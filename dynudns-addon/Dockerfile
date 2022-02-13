@@ -3,6 +3,7 @@ FROM $BUILD_FROM
 
 # Setup base
 ARG DEHYDRATED_VERSION
+ARG DNSAPI_VERSION
 RUN apk add --no-cache openssl \
   && curl -s -o /usr/bin/dehydrated \
     "https://raw.githubusercontent.com/dehydrated-io/dehydrated/${DEHYDRATED_VERSION}/dehydrated" \
