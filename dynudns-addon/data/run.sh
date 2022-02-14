@@ -84,9 +84,9 @@ while true; do
     bashio::log.debug "ipv6:" "$ipv6"
 
     for domain in ${DOMAINS}; do
-        _get_recordid "${domain}"
-        bashio::log.debug "DynuDnsId:" "${_dns_record_id}"
-        answer=$(curl -s -X POST -H "API-Key: $TOKEN" -H "Content-Type: application/json" "https://api.dynu.com/v2/dns/${_dns_record_id}" -d "{\"name\":\"$domain\",\"ipv4Address\": \"${ipv4}\",\"ipv6Address\": \"${ipv6}\"}")
+        _get_root "${domain}"
+        bashio::log.debug "DynuDnsId:" "${dnsId}"
+        answer=$(curl -s -X POST -H "API-Key: $TOKEN" -H "Content-Type: application/json" "https://api.dynu.com/v2/dns/${dnsId}" -d "{\"name\":\"$domain\",\"ipv4Address\": \"${ipv4}\",\"ipv6Address\": \"${ipv6}\"}")
         bashio::log.debug "${answer}"
     done
     
