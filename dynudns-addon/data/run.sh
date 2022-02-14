@@ -1,6 +1,6 @@
 #!/usr/bin/env bashio
 
-#bashio::log.level "debug"
+bashio::log.level "debug"
 
 source dns_dynu.sh
 
