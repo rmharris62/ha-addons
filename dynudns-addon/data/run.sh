@@ -4,6 +4,7 @@ bashio::log.level "debug"
 
 source dns_dynu.sh
 
+set -x
 
 CERT_DIR=/data/letsencrypt
 WORK_DIR=/data/workdir
